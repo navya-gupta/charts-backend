@@ -10,14 +10,13 @@ CREATE TABLE IF NOT EXISTS user_uploads (
     full_name VARCHAR(255) NOT NULL,
     university VARCHAR(255) NOT NULL,
     department VARCHAR(255) NOT NULL,
-    machine_used VARCHAR(255) NOT NULL,
-    model_number VARCHAR(255) NOT NULL,
+    make_and_model_of_machine VARCHAR(255) NOT NULL,
     email_address VARCHAR(255) NOT NULL,
     timestamp DATETIME NOT NULL
 )
 """
 
 INSERT_USER_UPLOAD = """
-INSERT INTO user_uploads (id, full_name, university, department, machine_used, model_number, email_address, timestamp)
-VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+INSERT INTO user_uploads (id, full_name, university, department, make_and_model_of_machine, email_address, timestamp)
+VALUES (%s, %s, %s, %s, %s, %s, %s)
 """

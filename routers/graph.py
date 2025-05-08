@@ -75,7 +75,7 @@ def generate_id(prefix, table_name, conn):
 
 # Single endpoint for form and CSV upload
 @router.post("/upload-csv/")
-async def upload_csv(file: UploadFile, full_name: str = Form(...), university: str = Form(...), department: str = Form(...), machine_used: str = Form(...), model_number: str = Form(...), email_address: str = Form(...)):
+async def upload_csv(file: UploadFile, full_name: str = Form(...), university: str = Form(...), department: str = Form(...), make_and_model_of_machine: str = Form(...), email_address: str = Form(...)):
     print("KK1")
     global upload_paths
     try:
@@ -99,7 +99,7 @@ async def upload_csv(file: UploadFile, full_name: str = Form(...), university: s
         timestamp = datetime.now()
         cursor.execute(
             INSERT_USER_UPLOAD,
-            (upload_id, full_name, university, department, machine_used, model_number, email_address, timestamp)
+            (upload_id, full_name, university, department, make_and_model_of_machine, email_address, timestamp)
         )
         conn.commit()
 

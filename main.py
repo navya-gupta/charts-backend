@@ -7,7 +7,7 @@ app = FastAPI()
 # Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],  # React frontend origin
+    allow_origins=["http://localhost:5173", "http://sim-hub.poly.edu:8001"],  # React frontend origin
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
